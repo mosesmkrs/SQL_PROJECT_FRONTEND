@@ -11,19 +11,16 @@ function DemoPage() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/equipments`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/assessment`);
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
         const jsonData: any[] = await response.json();
         
         const transformedData: Payment[] = jsonData.map((item: any) => ({
-          id: item.EquipmentID,
-          EquipmentName: item.EquipmentName,
-          ConditionGiven: item.ConditionGiven,
-          ConditionReturned: item.ConditionReturned,
-          FarmerAssigned: item.FarmerAssigned,
-          DateAssigned: item.DateAssigned
+          id: item.FarmerID,
+          AbilityToFeedNation: item.AbilityToFeedNation,
+          ProductivityScore: item.ProductivityScore,
         }));
 
         setData(transformedData);
@@ -47,7 +44,7 @@ function DemoPage() {
         <p className="text-3xl justify-center text-center text-red-500 my-4">Loading...</p>
       ) : (
         <div className="container mx-auto p-10">
-          <p className="text-3xl justify-center text-center text-blue-500 my-4">Equipments</p>
+          <p className="text-3xl justify-center text-center text-blue-500 my-4">Productivity Assessment</p>
           <DataTable columns={columns} data={data} />
         </div>
       )}

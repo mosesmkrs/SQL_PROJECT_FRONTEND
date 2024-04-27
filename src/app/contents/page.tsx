@@ -7,15 +7,15 @@ function Page() {
       <div className='flex space-x-64 p-8'>
         <div className="space-y-8 grid">
             <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/payments">Farmer&apos;s Details</Link>
-            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/page2">Crops</Link>
-            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/page3">Productivity Assessment</Link>
-            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/page4">Inputs</Link>
+            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/crops">Crops</Link>
+            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/assessment">Productivity Assessment</Link>
+            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/inputs">Inputs</Link>
         </div>
         <div className='grid space-y-8'>
             <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/equipments">Equipments</Link>
-            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/page6">Credit Transactions</Link>
-            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/page7">Surplus sales</Link>
-            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/page7">Farmer&apos;s Crops</Link>
+            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/transactions">Credit Transactions</Link>
+            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="/surplus">Surplus sales</Link>
+            <Link  className='text-lg font-semibold  hover:text-green-500 rounded-md' href="farmercrops">Farmer&apos;s Crops</Link>
         </div>
         
       </div>

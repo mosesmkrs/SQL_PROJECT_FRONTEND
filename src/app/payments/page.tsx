@@ -11,7 +11,7 @@ function DemoPage() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:8081/data');
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/data`);
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
