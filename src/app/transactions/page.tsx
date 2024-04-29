@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { columns, Payment } from "./columns";
 import { DataTable } from "./data-table";
+import Link from 'next/link';
 
 function DemoPage() {
   const [data, setData] = useState([] as Payment[]); 
@@ -48,6 +49,7 @@ function DemoPage() {
       ) : (
         <div className="container mx-auto p-10">
           <p className="text-3xl justify-center text-center text-blue-500 my-4">Credit Transactions</p>
+          <Link href={'/addcredit'} className="py-3 px-5 rounded-lg  text-blue-600 justify-center items-center text-center hover:font-bold hover:bg-blue-300 hover:text-blue-800 hover:shadow-lg hover:shadow-blue-700">Add entry</Link>
           <DataTable columns={columns} data={data} />
         </div>
       )}
