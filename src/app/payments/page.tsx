@@ -12,20 +12,20 @@ function DemoPage() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/data`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/data/`);
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
         const jsonData: any[] = await response.json();
         
         const transformedData: Payment[] = jsonData.map((item: any) => ({
-          id: item.FarmerID,
-          FirstName: item.FirstName,
-          LastName: item.Surname,
-          HouseholdSize: item.HouseholdSize,
-          Contact: item.ContactInfo,
-          County: item.County,
-          FarmSize: item.FarmSizeAcres
+         id: item[0],            // FarmerID
+         FirstName: item[1],     // FirstName
+         LastName: item[2],      // Surname
+         HouseholdSize: item[3], // HouseholdSize
+         Contact: item[4],       // ContactInfo
+         County: item[5],        // County
+         FarmSize: item[6]       // FarmSizeAcres
         }));
 
         setData(transformedData);

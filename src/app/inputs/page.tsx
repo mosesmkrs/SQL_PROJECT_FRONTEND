@@ -18,11 +18,11 @@ function DemoPage() {
         const jsonData: any[] = await response.json();
         
         const transformedData: Payment[] = jsonData.map((item: any) => ({
-          id: item.InputsID,
-          InputType: item.InputType,
-          AssignedFarmer: item.AssignedFarmer,
-          Quantity: item.QuantityInKgs,
-          DateProvided: item.DateProvided,
+          id: item[0],
+          InputType: item[1],
+          AssignedFarmer: item[2],
+          Quantity: item[3],
+          DateProvided: item[4],
         }));
 
         setData(transformedData);
